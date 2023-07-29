@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="flex-container">
+        <div class="form-box">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">عضویت سریع</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">عضویت</button>
+                </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    حساب کاربری دارید؟ <a class="ml-2" href="{% url 'users:login' %}">ورود</a>
+                </small>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
