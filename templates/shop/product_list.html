@@ -2,14 +2,16 @@
 {% block title %}لیست محصولات{% endblock title %}
 {% block content %}
   <h1>لیست محصولات</h1>
-  {% for product in products %}
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
-      <div class="card-body">
-        <h3 class="card-title">{{ product.name }}</h3>
-        <p class="card-text">{{ product.detail|truncatewords:30 }}</p>
-        <a href="#" class="btn btn-primary">خرید</a>
+  <div class="d-flex flex-row gap-3">
+    {% for product in products %}
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+        <div class="card-body">
+          <h3 class="card-title">{{ product.name }}</h3>
+          <p class="card-text">{{ product.detail|truncatewords:30 }}</p>
+          <a href="#" class="btn btn-primary">خرید</a>
+        </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 {% endblock content %}

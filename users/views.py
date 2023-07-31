@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.models import User
 
 
+from shop.models import Product
 from .forms import UserRegisterForm, LoginForm
 
 
@@ -26,5 +28,12 @@ def register(request):
     return render(request, "users/register.html", {"form": form})
 
 
+def user_posts(request, username):
+    user = User.objects.get(username=username)
+    products = Product.objects.filter(user=user)
+    return render(request, "user_posts.html", {"products": products})
+
+
 def dashboard(request):
-    pass
+    products = Product.objects.filter(user=request.user)
+    return render(request, "users/dashboard.html", {"products": products})

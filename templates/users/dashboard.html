@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block title %}داشبورد کاربر{% endblock title %} {%
+{% block content %}
+
+<h1>مدیریت محصولات</h1>
+
+<a href="{% url 'shop:add_product' %}">افزودن محصول جدید</a>
+
+<div class="d-flex flex-row gap-3">
+  {% for product in products %}
+  <div class="card" style="width: 18rem;">
+    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+    <div class="card-body">
+      <p class="card-text">{{ product.detail|truncatewords:30 }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}
