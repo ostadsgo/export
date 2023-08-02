@@ -17,7 +17,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom style -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %}{% endblock title %}</title>
   </head>
 
@@ -25,9 +25,7 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'shop:product_list' %}"
-            >اکسپورت</a
-          >
+          <a class="navbar-brand" href="{% url 'shop:product_list' %}">اکسپورت</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -59,13 +57,13 @@
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:dashboard' %}"
-                  >{{ user.username }}</a
-                >
+                <a class="nav-link" href="{% url 'users:dashboard' %}">{{ user.username }}</a>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:logout' %}">خروج</a>
               </li>
               {% else %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:login' %}">ورود</a>
+                <a class="nav-link btn-primary" href="{% url 'users:login' %}">ورود</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'users:register' %}">عضویت</a>

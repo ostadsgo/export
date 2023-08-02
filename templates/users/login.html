@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-  <div class="flex-container">
-    <div class="form-box">
-      <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-          <legend class="border-bottom mb-4">ورود کاربران</legend>
-          {{ form|crispy }}
-        </fieldset>
-        <div class="form-group">
-          <button class="btn btn-outline-info" type="submit">ورود</button>
-        </div>
-      </form>
-      <div class="border-top pt-3">
-        <small class="text-muted">
-          هنوز عضو نشده اید؟ <a class="ml-2" href="{% url 'users:register' %}">عضویت</a>
-        </small>
+<div class="flex-container">
+  <div class="form-box">
+    <form method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">ورود کاربران</legend>
+        {{ form|crispy }}
+      </fieldset>
+      <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">ورود</button>
       </div>
-    </div> <!-- end of login-form -->
-  </div>
+    </form>
+    <div class="border-top pt-3">
+      <small class="text-muted">
+        هنوز عضو نشده اید؟ <a class="ml-2" href="{% url 'users:register' %}">عضویت</a>
+      </small>
+    </div>
+  </div> <!-- end of login-form -->
+</div>
 {% endblock content %}

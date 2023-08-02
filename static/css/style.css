@@ -7,7 +7,7 @@
 
 body {
   direction: rtl;
-  background-color: #e7e6e4;
+  background-color: #e5eaee;
   font-family: "Sahel";
 }
 
@@ -23,6 +23,7 @@ h2 {
   align-items: center;
   height: 100vh;
 }
+
 .form-box {
   max-width: 400px;
   width: 100%;
