@@ -9,7 +9,7 @@
         <div class="card-body">
           <h3 class="card-title">{{ product.name }}</h3>
           <p class="card-text">{{ product.detail|truncatewords:30 }}</p>
-          <a href="#" class="btn btn-primary">خرید</a>
+          <a href="{% url 'shop:product_detail' product.pk %}" class="btn btn-primary">مشاهده</a>
         </div>
       </div>
     {% endfor %}

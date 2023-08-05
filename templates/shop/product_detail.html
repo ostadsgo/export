@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    <img src="{{ product.image.url }}" alt="{{ product.product_name }}">
+    <h1>{{ product.name }}</h1>
+    <p>{{ product.detail }}</p>
+    <p>{{ product.price }}</p>
+    <a class="btn btn-primary" href="#">خرید</a>
+</form>
+{% endblock %}

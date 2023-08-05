@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>به‌روزرسانی محصول</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+
+
+        <input type="submit" value="به‌روزرسانی" class="btn btn-primary">
+        <input type="submit" value="انصراف" class="btn btn-danger">
+    </form>
+{% endblock %}

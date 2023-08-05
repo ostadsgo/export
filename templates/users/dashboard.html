@@ -10,7 +10,9 @@
   <div class="card" style="width: 18rem;">
     <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
     <div class="card-body">
-      <p class="card-text">{{ product.detail|truncatewords:30 }}</p>
+      <p class="card-text">{{ product.name }}</p>
+      <p>${{product.price }}</p>
+      <a class="btn btn-primary" href="{% url 'shop:product_update' product.pk %}">بروز رسانی</a>
       <a class="btn btn-danger" href="{% url 'shop:product_delete' product.pk %}">حذف</a>
     </div>
   </div>
