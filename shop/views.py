@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from .models import Product
+from .forms import ProductForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
@@ -17,10 +19,9 @@ def product_list(request):
 
 class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
-    fields = ["image", "name", "detail", "price"]
-
-    template_name = "shop/add_product.html"  # <app>/<model>_<viewtype>.html
-    # context_object_name = 'products'
+    template_name = "shop/product_create.html"
+    form_class = ProductForm
+    success_url = reverse_lazy("users:dashboard")
 
     def form_valid(self, form):
         form.instance.user = self.request.user
