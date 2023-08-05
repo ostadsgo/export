@@ -1,0 +1,17 @@
+<!-- product_delete -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="pt-3">حذف محصول</h1>
+
+<div class="pt-3 d-flex flex-row">
+    <form method="POST">
+        {% csrf_token %}
+
+        <p>آیا از حذف این محصول مطمئن هستید؟</p>
+
+        <input type="submit" value="حذف" class="btn btn-danger">
+        <a class="btn btn-success" href="{% url 'users:dashboard' %}">نه</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}داشبورد کاربر{% endblock title %} {%
+{% extends "base.html" %} {% block title %}داشبورد کاربر{% endblock title %}
 {% block content %}
 
 <h1>مدیریت محصولات</h1>
@@ -11,6 +11,7 @@
     <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
     <div class="card-body">
       <p class="card-text">{{ product.detail|truncatewords:30 }}</p>
+      <a class="btn btn-danger" href="{% url 'shop:product_delete' product.pk %}">حذف</a>
     </div>
   </div>
   {% endfor %}
